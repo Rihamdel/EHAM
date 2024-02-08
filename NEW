@@ -1,0 +1,12 @@
+int start() {
+   double ld_0;
+   double ld_8;
+   double ld_16;
+   int shift_24;
+   int li_28 = IndicatorCounted();
+   if (li_28 < 0) return (-1);
+   if (li_28 > 0) li_28--;
+   int li_32 = MathMin(Bars - li_28, Bars - 1);
+   if (gi_132) {
+      g_ibuf_112[0] = li_32 + 1;
+      return (0);

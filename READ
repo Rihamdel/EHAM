@@ -1,0 +1,33 @@
+ 1. The Market Panel:
+      The Market Panel can be turned on/off.  When it is turned on it displays the items
+      listed below, and you can also show the Clock Panel when the Market Panel is on:
+      (1) Symbol & Period:  The symbol for the currency pair and the chart TF.
+      (2) Spread: The difference (cost to trade) between the Ask and the Bid price.
+      (3) Ranges: The weekly and daily average ranges.
+      (4) Swaps:  The long and the short swap rates.
+      (5) Candle: The time remaining for the chart current TF bar.
+      (6) Price:  The bid price of either currency or non-currency items.  For currencies,
+          the last (fractional) digit can be set to appear smaller than the other digits.
+          The price changes color when the last full size digit reverses.
+      (7) The Logo.
+   2. The Clock Panel:
+      When the Market Panel is on the Clock Panel can be turned on/off.  It displays time and
+      location for seven different time zones that can be selected out of a list of time zones
+      available.  It is also used during a time of live feed to determine the difference
+      between the broker server time and GMT, which is an input that must be entered manually
+      in the "Preface" section of the External Inputs.  If a time zone displayed happens to
+      coincide with the broker server time, your local time, GMT, or the time zone selected
+      for the calculation of pivots (if pivots are displayed), an extension to the label will
+      include the designators: "B", "L", "G" and "P" so you do not have to waste lines to also
+      separately display the Broker, Local and GMT time zones.
+
+In addition to the two panel sections, this multi-function indicator provides the following
+services, which are listed here, and more fully described below:
+   1. A special Ask line and a special Bid line.
+   2. A background of level lines dividing the distance between whole numbers into quarters.
+   3. Natural fibonacci numbers applied to the previous day range as well as above and below.
+   4. Daily or Fibonacci pivots, including mid-pivot lines.
+   5. Average Range H/L lines for the week and day.
+   6. Day Separators.
+   7. Vertical lines at the open of the Asian, Frankfurt, London and New York forex markets,
+      and at the close of the London market.

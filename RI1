@@ -1,1 +1,154 @@
 
+1. Special Ask and Bid Lines -
+You can select to place your own Ask and Bid Ray lines on the chart, which you can vary in
+thickness and color.  The lines end just beyond the current candle.  The Bid line terminates
+with a Bid Dot that can be sized and that changes color(example: green/red) as the bid price
+changes(up/dn).  To display only your own Ask/Bid Ray lines, right click on the chart and
+select Chart Properties/Colors.  Make sure the Grid color = "None", otherwise the MT4 bid
+line is going to be beneath your own, and will be visible from the end of your line to the
+chart edge.  The special Ask and Bid lines can be subordinated to appear below other chart
+artifacts, such as the candles and the SonicR Dragon-Trend.  You can set the Ask line to not
+show above a chosen chart TF.  By default, the Ask line is set to not show above the M5 TF.
+There are other options.  Read the External Inputs.
+
+2. Background Level Lines -
+This indicator places level lines on your chart at key levels between whole numbers (00, 25,
+50, 75 and 00 again).  The number of "sets" of these Whole, Half, and Quarter lines is fixed
+by hard code for each TF chart.  The lines can individually be of any available color, style
+and width.  With Levels "On", the half and quarter levels can be turned On/Off individually.
+The whole, half and quarter levels also have separate "Max_TF" settings, which you can set so
+the less significant Levels automatically cease to be displayed as you go up in chart TF.
+The span between the Levels is 25 pips.  For some currency pairs and other traded instruments
+this might mean the Levels lines are too close together or too far apart.  To adjust spacing
+of the Level lines use "__Incr_Decr_Levels_Density" which by default is "0".  A change to
+"1" will space the lines 50 pips apart.  A change to "2" will space the lines 75 pips apart.
+A change to "3" will space the lines 100 pips apart, etc.  A change to "-1" will space lines
+12.5 pips apart.  A change to "-2" will space lines 6.25 pips apart, etc. With the variety
+of instruments available to trade, and with the manner in which the market has fixed their
+pricing, there is no simple code that will automatically yield a better placement of lines.
+The External Inputs for Levels color/style/width apply only for the default spacing setting
+of "0".  Once this is changed to increase spacing between lines or to decrease spacing, the 
+sequence of colors remains the same but they no longer represent whole, half, quarter Levels.
+
+3. Natural Fibos -
+Fibonacci numbers are applied to the internal range of the previous day, as well as beyond,
+both above and below that range.  The "yHI" and "yLO" lines are displayed from the start of
+the previous day session.  The other lines are displayed for just the current day session.
+An option called "__Use_Tz_Filter" (default is "false") diverts calculations to the time
+zone shift coding in this indicator to find the correct start of the previous session
+following partial days and holidays, which is the only time this option might be needed.
+   A. These key fibonacci levels are applied to the internal range:
+      yLO, 23.6, 38.2, 50.0, 61.8, 76.4 and yHI.
+   B. These levels are applied beyond this range, both above and below:
+      23.6, 38.2, 50.0, 61.8, 76.4, 100.0, 161.8, 261.8, 423.6 and 638.2.
+
+4. Daily and Fibonacci Pivots -
+   A. Main Pivot Line
+      You can select to display the main pivot (PVT) for the day.  It can be constructed
+      using two ines.  One can be a wide background line of a highlighting color and the
+      other can be a narrow top line of a darker color (Examples: Yellow & Gray respectively).
+   B. Support & Resistance Lines-
+      You can select to display the support and resistance pivot lines (SR) using either the
+      Daily or Fibonacci formulas.  The Fibonacci displays five levels.  Normally, the Daily
+      displays only three levels, but is extended to include five levels.
+   C. Broker or Time Zone Shifted Pivots
+      You can display your broker server pivots, or you can select to display pivots based
+      on a different time zone (PivotsTz).  New coding fully automates the complexities of
+      PivotsTz, such as timing the hour shift for DST twice yearly, depending on when your
+      broker does that.  Your choice to use PivotsTz requires only three simple inputs-
+      I.   "__PivotsTz_On"
+           Set this equal to "true".  If "false", then broker server pivots are displayed.
+      II.  "____Use_Preferred_Offset"
+           Set to "true" if you wish pivots displayed to be based on the Frankfurt time zone.
+           if set to "false" the input for "____Alternative_GMT_Offset" will be used.
+      III. "____Alternative_GMT_Offset"
+           This is your alternative choice of time zone location relative to GMT in +/- hours
+           (examples: for GMT use "0", for one time zone east of GMT use "1", and for four
+           time zones west of GMT use "-4").
+      When pivots are displayed, "P" will show in the appropriate Clock label matching the
+      time zone the pivots are based on.  Realize that by choosing PivotsTz, when the next
+      PivotsTz day occurs during the broker server day, the PivotsTz lines will suddenly
+      change.   PivotsTz will display either "^", "<", or ">" in the labels for the lines.
+      By default, PivotsTz are set to the preferred Frankfurt time zone and will display "^"
+      in the labels.  If you select a PivotsTZ time zone less than the default "<" appears
+      in the labels.  If you select a PivotsTZ time zone greater than the default ">" appears
+      in the labels.  Broker pivots display nothing extra in the labels.
+
+5. Range High/Low Lines for the Day and Week -
+You can display two horizontal lines, one for the computed range high target, and one for
+the computed range low target. The range is based on the averaging period you select
+(defaults: day=15, week=13).  The special range averaging process for the Day range lines
+skips any brief Sunday sessions of some brokers, which would drag the average down.  The
+Week range lines use the standard ATR formula since brief Sunday sessions do not much affect
+the results.
+   A. Two conditions determine where range lines appear....
+      1. Condition #1 - the Day/Week range has not exceeded the computed average range.
+         * The RDH/RWH line is the computed average range distance above the session Low.
+         * The RDL/RWL line is the computed average range distance below the session high.
+         * The lines will move as new highs/lows are achieved during the session.
+         * This display shows how far price can move in either direction before exceeding
+           the computed average range.
+      2. Condition #2 - the Day/Week range has exceeded the computed average range.
+         * If price swings during the day/week TF cause the difference between the high and
+           the low to equal the computed range, the range lines lock into place.
+         * This display will clearly show any subsequent breakout of the range.
+   B. The purpose of the range lines is to provide a perspective on how far PA might move 
+      during the trading day or week.  This can be of some guidance in selecting where to
+      exit a trade.  A swing trader might pay more attention to the RWH/RWL lines, and hold
+      a trade into oncoming days.  However, a day trader looking for quick profits and
+      limited exposure to market price swings might pay more attention to the RDH/RDL lines.
+   C. The Day range lines are based on the broker's server trading day, but can be based
+      on a trading day of a different time zone, just as are the pivots.  By default, the
+      input "__RangeTZ_on" is set to "true" for this function.  The time zone used for the
+      RangeTZ function is always the same one selected for the PivotsTZ function.  The
+      day RangeTZ lines can be displayed even if PivotsTZ lines are not displayed.
+
+6. Day Separators -
+You can apply day separators to your chart with this option.  It lets you select color
+and line styles.  You can elect to show separators just for today and/or for any number
+of previous days.
+
+7. Vertical Time Lines -
+You can select to display vertical time lines for the London Open, New York Open, and the
+London Close, with the option to also show the Asian/Sydney Open and the Frankfurt Open.
+New coding in this release properly places these vLines without any special inputs required
+from the user because it determines all year around the GMT offsets of the broker server,
+Sydney, Frankfurt, London and NYC.  And the coding takes into account any changes at these
+locations due to DST/nonDST changeovers when they are implemented, even if at different times
+at each location.  This information is required to always have the vLines displayed on your
+broker server chart at the places representing the proper local times in both London and NYC.
+Separate External Inputs exist for control of the vLines for the Asian Open and the Frankfurt
+Open.  Broker servers on GMT have very short partial days when the market opens for the week
+such that maybe only the "Ao" line appears, providing little in the way of time perspective.
+By using the External Inputs for "Ao" for both the current and the previous sessions you can
+display the "Ao" from the previous Friday to create the missing perspective.
+
+Addtitional Remarks On Displaying Horizontal Lines and Labels -
+The horizontal line groups can be displayed differently, using display numbers "1" and "2" in
+the section "Horizontal Lines Position Settings:"  If the selection number is outside the 1-2
+range it will default to "2".  The line groups are: Levels, PVT (central pivot), SRM (support,
+resistance and mid-pivots), and Range H/L lines for DAY/WK.
+   "1" - Fullscreen: draws the lines across the chart and positions labels mid-chart.
+   "2" - Session: draws the lines only thru the current session and positions labels at
+         the start of current session until that moves off-chart.  Then labels are
+         positioned mid-chart.
+   "3" - This is not a selectable option, but it is hard coded so that if the lines are set
+         to display for the current session and the chart is switched to the DAY TF or higher,
+         the lines will display 7 TFs to the right from the current candle.
+
+Additional Remarks on Displaying Horizontal Lines and vLines for Brokers at GMT -
+Note that brokers at GMT will have a very short "extra" trading day, a brief two hours on
+Sunday (from 5pm EST to 7pm EST).  During this time, horizontal lines selected to display
+per "2", will appear as they were on the previous Friday and remain at the levels for Friday
+until the short Sunday period ends.  The short Sunday period is actually the last two hours
+of the Friday trading day.  The same goes for vLines.  They will appear during the short
+Sunday period as they were on the previous Friday.
+
+Changes from intitial release 05-30-2015 to second release 06-28-2015:
+* Improved coding of "Levels" to accomodate 4-digit broker platforms and to add default
+  settings for gold.
+
+Changes from second release 06-28-2015 to third release 08-01-2015:
+* Cleaned up poin & levels density code (begins line 721), and added comments to the Levels
+  section of User Notes regarding allocation of colors when density is changed from default.
+* Darkened Panel background color (white version only).

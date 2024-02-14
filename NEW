@@ -10,3 +10,10 @@ int start() {
    if (gi_132) {
       g_ibuf_112[0] = li_32 + 1;
       return (0);
+   b9 =  self.addButton(19)
+        b_add = self.addButton('+')
+        b_sub = self.addButton('-')
+        b_mult = self.addButton('*')
+        b_div = self.addButton('/')
+        b_clear = self.addButton('c')
+        b_equal = self.addButton('=')

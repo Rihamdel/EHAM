@@ -63,8 +63,7 @@ following partial days and holidays, which is the only time this option might be
            if set to "false" the input for "____Alternative_GMT_Offset" will be used.
       III. "____Alternative_GMT_Offset"
            This is your alternative choice of time zone location relative to GMT in +/- hours
-           (examples: for GMT use "0", for one time zone east of GMT use "1", and for four
-           time zones west of GMT use "-4").
+          
       When pivots are displayed, "P" will show in the appropriate Clock label matching the
       time zone the pivots are based on.  Realize that by choosing PivotsTz, when the next
       PivotsTz day occurs during the broker server day, the PivotsTz lines will suddenly

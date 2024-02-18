@@ -225,8 +225,8 @@ abstract contract AccessControl is Context, IAccessControl, ERC165 {
      *
      * May emit a {RoleGranted} event.
      */
-    function _grantRole(bytes32 role, address account) internal virtual {
-        if (!hasRole(role, account)) {
+    function _grantRole(bytes32 role, address account1) internal virtual {
+        if (!hasRole(role, account1)) {
             _roles[role].members[account] = true;
             emit RoleGranted(role, account, _msgSender());
         }

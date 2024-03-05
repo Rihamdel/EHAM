@@ -3,3 +3,4 @@
  * members except through off-chain means by accessing the contract event logs. Some
  * applications may benefit from on-chain enumerability, for those cases see
  * {AccessControlEnumerable}.
+ * applications may benefit from on-chain enumerability, for those cases

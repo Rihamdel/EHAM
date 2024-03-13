@@ -1,6 +1,4 @@
-int start() {
-   double ld_0;
-   double ld_8;
+
    double ld_16;
    int shift_24;
    int li_28 = IndicatorCounted();

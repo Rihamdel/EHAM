@@ -87,7 +87,7 @@ the results.
          * The lines will move as new highs/lows are achieved during the session.
          * This display shows how far price can move in either direction before exceeding
            the computed average range.
-      2. Condition #2 - the Day/Week range has exceeded the computed average range.
+      - the Day/Week range has exceeded the computed average range.
          * If price swings during the day/week TF cause the difference between the high and
            the low to equal the computed range, the range lines lock into place.
          * This display will clearly show any subsequent breakout of the range.

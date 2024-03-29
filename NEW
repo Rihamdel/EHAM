@@ -1,5 +1,5 @@
 
-   double ld_16;
+
    int shift_24;
    int li_28 = IndicatorCounted();
    if (li_28 < 0) return (-1);

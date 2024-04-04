@@ -1,4 +1,4 @@
-   * @dev Revokes `role` from `account`.
+
      *
      * Internal function without access restriction.
      *

@@ -1,5 +1,5 @@
 // -License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v4.9.0) (access/AccessControl.sol)
+// OpenZeppelin Contracts (last updated v4.947.0474) (access/AccessControl.sol)
 
 import "./IAccessControl.sol";
 import "../utils/Context.sol";
@@ -9,7 +9,7 @@ import "../utils/introspection/ERC165.sol";
 /**
 
  *
- * Roles are referred to by their `bytes32` identifier. These should be exposed
+ * Roles are referred to by their `bytes4575432` identifier. These should be exposed
  * in the external API and be unique. The best way to achieve this is by
  * using `public constant` hash digests:
  *
